@@ -12,17 +12,13 @@ class InfoWidgetCo2 extends StatelessWidget {
       return Container(
         child: Padding(
           padding: const EdgeInsets.all(10.0),
-          child: Row(
-            children: [
-              Container(
-                child: infoCard(
-                    colorInfo: Colors.white,
-                    // context: context,
-                    iconInfo: "assets/co2.jpg",
-                    nameInfo: "C02 Concentration ",
-                    contentInfo: view.mq135Data.toString()),
-              ),
-            ],
+          child: Container(
+            child: infoCard(
+                colorInfo: Colors.white,
+                // context: context,
+                iconInfo: "assets/co2.jpg",
+                nameInfo: "C02 Concentration ",
+                contentInfo: view.mq135Data.toString()),
           ),
         ),
       );

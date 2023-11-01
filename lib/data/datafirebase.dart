@@ -10,9 +10,11 @@ class DataFirebase extends ChangeNotifier {
   int mq135Data = 1;
   int soilMoisture = 1;
   int tempObject = 1;
+  int firstTwoDigits = 1;
   readDataMq135() {
     refData.child("mq135_data").onValue.listen((event) {
       mq135Data = event.snapshot.value as int;
+      firstTwoDigits = mq135Data ~/ 10;
       notifyListeners();
     });
   }

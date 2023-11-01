@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Expanded infoCard({
+infoCard({
   // required BuildContext context,
   required String nameInfo,
   required String contentInfo,
@@ -28,30 +28,34 @@ Expanded infoCard({
                     fontWeight: FontWeight.w400),
               ),
               const SizedBox(height: 5),
-              Row(
+              Column(
                 children: [
                   Image.asset(
                     iconInfo,
                     height: 30,
                   ),
                   const SizedBox(width: 10),
-                  Text(
-                    contentInfo,
-                    style: const TextStyle(
-                        color: Colors.blue,
-                        fontSize: 35,
-                        fontWeight: FontWeight.w400),
-                  ),
-                  const SizedBox(
-                    width: 5,
-                  ),
-                  const Text(
-                    "Ppm",
-                    style: TextStyle(
-                        color: Colors.blue,
-                        fontSize: 25,
-                        fontWeight: FontWeight.w400),
-                  ),
+                  Row(
+                    children: [
+                      Text(
+                        contentInfo,
+                        style: const TextStyle(
+                            color: Colors.blue,
+                            fontSize: 35,
+                            fontWeight: FontWeight.w400),
+                      ),
+                      const SizedBox(
+                        width: 5,
+                      ),
+                      const Text(
+                        "Ppm",
+                        style: TextStyle(
+                            color: Colors.blue,
+                            fontSize: 15,
+                            fontWeight: FontWeight.w400),
+                      ),
+                    ],
+                  )
                 ],
               )
             ],
