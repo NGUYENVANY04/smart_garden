@@ -1,5 +1,4 @@
 import 'dart:math';
-import 'package:smart_garden/widget/control_device/control_widget.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
