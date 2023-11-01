@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_database/firebase_database.dart';
 
 class ControlDevice extends StatefulWidget {
   const ControlDevice({Key? key}) : super(key: key);
@@ -10,16 +11,23 @@ class ControlDevice extends StatefulWidget {
 class _ControlDeviceState extends State<ControlDevice> {
   bool stateLight = true;
   bool stateMotor = true;
+  final refcontrol = FirebaseDatabase.instance.ref();
 
   controlLight() {
     setState(() {
       stateLight = !stateLight;
+      refcontrol.child("state").update({
+        "light": stateLight,
+      });
     });
   }
 
   controlMotor() {
     setState(() {
       stateMotor = !stateMotor;
+      refcontrol.child("state").update({
+        "motor": stateMotor,
+      });
     });
   }
 

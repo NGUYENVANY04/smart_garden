@@ -5,7 +5,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:smart_garden/data/dataTempApi.dart';
 import 'package:smart_garden/data/datafirebase.dart';
-// import 'package:smart_garden/data/datafirebase.dart';
 import 'package:smart_garden/home.dart';
 import 'package:smart_garden/widget/soilMoisture/widget_soi.dart';
 import 'package:smart_garden/widget/temp_api_widget/widget_temp.dart';
