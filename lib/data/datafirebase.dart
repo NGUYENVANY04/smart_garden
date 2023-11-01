@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
 
 class DataFirebase extends ChangeNotifier {
+  DataFirebase() : super() {
+    readDataMq135();
+    readSoilMoisture();
+  }
   final refData = FirebaseDatabase.instance.ref(); // call firebase
   int mq135Data = 1;
   int soilMoisture = 1;

@@ -9,7 +9,7 @@ Expanded infoCard({
 }) {
   return Expanded(
     child: Container(
-        padding: EdgeInsets.only(left: 40, top: 30),
+        padding: const EdgeInsets.only(left: 40, top: 30),
         // width: MediaQuery.of(context).size.width*0.4,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
@@ -36,10 +36,20 @@ Expanded infoCard({
                   ),
                   const SizedBox(width: 10),
                   Text(
-                    "$contentInfo ppm",
+                    contentInfo,
                     style: const TextStyle(
                         color: Colors.blue,
                         fontSize: 35,
+                        fontWeight: FontWeight.w400),
+                  ),
+                  const SizedBox(
+                    width: 5,
+                  ),
+                  const Text(
+                    "Ppm",
+                    style: TextStyle(
+                        color: Colors.blue,
+                        fontSize: 25,
                         fontWeight: FontWeight.w400),
                   ),
                 ],
