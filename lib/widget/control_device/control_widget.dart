@@ -11,9 +11,17 @@ class ControlDevice extends StatefulWidget {
 class _ControlDeviceState extends State<ControlDevice> {
   bool stateLight = true;
   bool stateMotor = true;
+  bool log = false;
   final refcontrol = FirebaseDatabase.instance.ref();
 
-  controlLight() {
+  // ignore: non_constant_identifier_names
+  void Log() {
+    setState(() {
+      log = !log;
+    });
+  }
+
+  void controlLight() {
     setState(() {
       stateLight = !stateLight;
       refcontrol.child("state").update({
@@ -22,7 +30,7 @@ class _ControlDeviceState extends State<ControlDevice> {
     });
   }
 
-  controlMotor() {
+  void controlMotor() {
     setState(() {
       stateMotor = !stateMotor;
       refcontrol.child("state").update({
@@ -33,56 +41,87 @@ class _ControlDeviceState extends State<ControlDevice> {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(left: 40),
-          child: Container(
-            height: 150,
-            width: 150,
-            decoration: const BoxDecoration(
-              color: Color.fromARGB(255, 227, 117, 117),
-              borderRadius: BorderRadius.all(
-                Radius.circular(100),
+    return log
+        ? Column(
+            children: [
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 40),
+                    child: Container(
+                      height: 150,
+                      width: 150,
+                      decoration: BoxDecoration(
+                        color: stateLight
+                            ? const Color.fromARGB(255, 227, 117, 117)
+                            : Colors.grey,
+                        borderRadius: const BorderRadius.all(
+                          Radius.circular(100),
+                        ),
+                      ),
+                      child: TextButton(
+                        onPressed: () {
+                          controlLight();
+                        },
+                        child: Text(
+                          stateLight ? "ON" : "OFF",
+                          style: const TextStyle(
+                            fontSize: 25,
+                            color: Color.fromARGB(255, 20, 14, 14),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 30.0),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 1),
+                    child: Container(
+                      height: 150,
+                      width: 150,
+                      decoration: BoxDecoration(
+                        color: stateMotor
+                            ? const Color.fromARGB(255, 227, 117, 117)
+                            : Colors.grey,
+                        borderRadius: const BorderRadius.all(
+                          Radius.circular(100),
+                        ),
+                      ),
+                      child: TextButton(
+                        onPressed: () {
+                          controlMotor();
+                        },
+                        child: Text(
+                          stateMotor ? "ON" : "OFF",
+                          style: const TextStyle(
+                            fontSize: 25,
+                            color: Color.fromARGB(255, 20, 14, 14),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
-            ),
-            child: TextButton(
-              onPressed: () {
-                controlLight();
-              },
-              child: Text(
-                stateLight ? "ON" : "OFF",
-                style: const TextStyle(
-                    fontSize: 25, color: Color.fromARGB(255, 20, 14, 14)),
+              IconButton(
+                onPressed: () {
+                  Log();
+                },
+                icon: const Icon(
+                  Icons.expand_less_sharp,
+                  size: 40,
+                ),
               ),
+            ],
+          )
+        : IconButton(
+            onPressed: () {
+              Log();
+            },
+            icon: const Icon(
+              Icons.expand_more,
+              size: 40,
             ),
-          ),
-        ),
-        const SizedBox(width: 30.0),
-        Padding(
-          padding: const EdgeInsets.only(left: 1),
-          child: Container(
-            height: 150,
-            width: 150,
-            decoration: const BoxDecoration(
-              color: Color.fromARGB(255, 227, 117, 117),
-              borderRadius: BorderRadius.all(
-                Radius.circular(100),
-              ),
-            ),
-            child: TextButton(
-              onPressed: () {
-                controlMotor();
-              },
-              child: Text(
-                stateMotor ? "ON" : "OFF",
-                style: const TextStyle(
-                    fontSize: 25, color: Color.fromARGB(255, 20, 14, 14)),
-              ),
-            ),
-          ),
-        ),
-      ],
-    );
+          );
   }
 }

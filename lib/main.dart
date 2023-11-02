@@ -13,17 +13,20 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   try {
     await Firebase.initializeApp(
-        options: const FirebaseOptions(
-      apiKey: 'AIzaSyBVFIPDBOlbDBrZOIwwukknrGNC4ldpGm0',
-      appId: '1:685006939519:android:0ae3d0ac2f4953ec0fe64a',
-      messagingSenderId: '685006939519',
-      projectId: 'my-firebase-da1f1',
-      databaseURL: 'https://my-firebase-da1f1-default-rtdb.firebaseio.com',
-      storageBucket: 'my-firebase-da1f1.appspot.com',
-    ));
+      options: const FirebaseOptions(
+        apiKey: 'AIzaSyBVFIPDBOlbDBrZOIwwukknrGNC4ldpGm0',
+        appId: '1:685006939519:android:0ae3d0ac2f4953ec0fe64a',
+        messagingSenderId: '685006939519',
+        projectId: 'my-firebase-da1f1',
+        databaseURL: 'https://my-firebase-da1f1-default-rtdb.firebaseio.com',
+        storageBucket: 'my-firebase-da1f1.appspot.com',
+      ),
+    );
+    print("Khoong cos ngoaij le ");
   } catch (e) {
-    log(e.toString() as num);
+    print(e.toString());
   }
+
   Provider.debugCheckInvalidValueType = null;
   runApp(const MyApp());
 }

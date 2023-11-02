@@ -26,7 +26,7 @@ class _MyHomeState extends State<MyHome> {
       body: Container(
         height: BouncingScrollSimulation.maxSpringTransferVelocity,
         width: BouncingScrollSimulation.maxSpringTransferVelocity,
-        color: Color.fromARGB(255, 237, 234, 232),
+        color: const Color.fromARGB(255, 237, 234, 232),
         child: Column(
           children: [
             const SizedBox(
@@ -79,10 +79,26 @@ class _MyHomeState extends State<MyHome> {
                 ),
               ],
             ),
-            SizedBox(
-              height: 30,
+            const SizedBox(
+              height: 20,
             ),
-            ControlDevice(),
+            Container(
+              height: 40,
+              width: 200,
+              decoration: BoxDecoration(
+                  color: const Color.fromARGB(31, 21, 19, 19),
+                  borderRadius: BorderRadius.circular(10)),
+              child: const Center(
+                child: Text(
+                  "Control Device",
+                  style: TextStyle(fontSize: 20),
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            const ControlDevice(),
           ],
         ),
       ),
