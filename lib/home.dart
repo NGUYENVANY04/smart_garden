@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:smart_garden/widget/control_device/control_widget.dart';
-import 'package:smart_garden/widget/soilMoisture/widget_soi.dart';
+import 'package:smart_garden/widget/hiu_widget/widget_Hiu.dart';
 // import 'package:smart_garden/data/dataTempApi.dart';
-import 'package:smart_garden/widget/temp_api_widget/widget_temp.dart';
-import 'package:smart_garden/widget/mq135_sensor/widget_co2.dart';
+import 'package:smart_garden/widget/temp_widget/widget_temp.dart';
+import 'package:smart_garden/widget/widget_ppm/widget_ppm.dart';
 
 class MyHome extends StatefulWidget {
   const MyHome({super.key});
@@ -35,7 +35,7 @@ class _MyHomeState extends State<MyHome> {
             Padding(
               padding: const EdgeInsets.all(15.0),
               child: Container(
-                height: 200,
+                height: 170,
                 width: 500,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
@@ -52,7 +52,7 @@ class _MyHomeState extends State<MyHome> {
             ),
             Container(
               color: const Color.fromARGB(255, 154, 146, 207),
-              height: 150,
+              height: 130,
               child: const Center(
                 child: InfoWidgetTemp(),
               ),
@@ -60,39 +60,21 @@ class _MyHomeState extends State<MyHome> {
             const SizedBox(
               height: 20,
             ),
-            Row(
-              children: [
-                Container(
-                  color: const Color.fromARGB(255, 154, 146, 207),
-                  height: 150,
-                  width: 200,
-                  child: const InfoWidgetCo2(),
-                ),
-                const SizedBox(
-                  width: 11,
-                ),
-                Container(
-                  color: const Color.fromARGB(255, 154, 146, 207),
-                  height: 150,
-                  width: 200,
-                  child: const InfoWidgetSoi(),
-                ),
-              ],
+            Container(
+              color: const Color.fromARGB(255, 154, 146, 207),
+              height: 130,
+              child: const Center(
+                child: InfoWidgetPpm(),
+              ),
             ),
             const SizedBox(
               height: 20,
             ),
             Container(
-              height: 40,
-              width: 200,
-              decoration: BoxDecoration(
-                  color: const Color.fromARGB(31, 21, 19, 19),
-                  borderRadius: BorderRadius.circular(10)),
+              color: const Color.fromARGB(255, 154, 146, 207),
+              height: 130,
               child: const Center(
-                child: Text(
-                  "Control Device",
-                  style: TextStyle(fontSize: 20),
-                ),
+                child: InfoWidgetHiu(),
               ),
             ),
             const SizedBox(

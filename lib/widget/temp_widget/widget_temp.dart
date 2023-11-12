@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:smart_garden/data/dataTempApi.dart';
-import 'package:smart_garden/widget/temp_api_widget/infocardtemp.dart';
+import 'package:smart_garden/widget/temp_widget/infocardtemp.dart';
 
 class InfoWidgetTemp extends StatelessWidget {
   const InfoWidgetTemp({Key? key}) : super(key: key);

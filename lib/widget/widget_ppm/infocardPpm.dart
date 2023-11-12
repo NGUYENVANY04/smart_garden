@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Expanded infoCard({
+Expanded infoCardPpm({
   // required BuildContext context,
   required String nameInfo,
   required String contentInfo,
@@ -9,7 +9,7 @@ Expanded infoCard({
 }) {
   return Expanded(
     child: Container(
-        padding: EdgeInsets.only(left: 40, top: 30),
+        padding: EdgeInsets.only(left: 20, top: 30),
         // width: MediaQuery.of(context).size.width*0.4,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
@@ -36,10 +36,10 @@ Expanded infoCard({
                   ),
                   const SizedBox(width: 10),
                   Text(
-                    "$contentInfo %",
+                    "$contentInfo Ppm",
                     style: const TextStyle(
                         color: Colors.blue,
-                        fontSize: 35,
+                        fontSize: 30,
                         fontWeight: FontWeight.w400),
                   ),
                 ],

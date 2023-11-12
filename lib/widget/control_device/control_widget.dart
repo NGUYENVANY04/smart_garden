@@ -49,7 +49,7 @@ class _ControlDeviceState extends State<ControlDevice> {
                   Padding(
                     padding: const EdgeInsets.only(left: 40),
                     child: Container(
-                      height: 150,
+                      height: 100,
                       width: 150,
                       decoration: BoxDecoration(
                         color: stateLight
@@ -77,7 +77,7 @@ class _ControlDeviceState extends State<ControlDevice> {
                   Padding(
                     padding: const EdgeInsets.only(left: 1),
                     child: Container(
-                      height: 150,
+                      height: 100,
                       width: 150,
                       decoration: BoxDecoration(
                         color: stateMotor

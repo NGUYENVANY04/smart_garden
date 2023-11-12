@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:smart_garden/data/dataTempApi.dart';
 import 'package:smart_garden/data/datafirebase.dart';
 import 'package:smart_garden/home.dart';
-import 'package:smart_garden/widget/soilMoisture/widget_soi.dart';
-import 'package:smart_garden/widget/temp_api_widget/widget_temp.dart';
-import 'package:smart_garden/widget/mq135_sensor/widget_co2.dart';
+import 'package:smart_garden/widget/hiu_widget/widget_Hiu.dart';
+import 'package:smart_garden/widget/temp_widget/widget_temp.dart';
+import 'package:smart_garden/widget/widget_ppm/widget_ppm.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -49,11 +49,11 @@ class _MyAppState extends State<MyApp> {
         ),
         ChangeNotifierProvider<DataFirebase>(
           create: (_) => DataFirebase(),
-          child: const InfoWidgetCo2(),
+          child: const InfoWidgetPpm(),
         ),
         ChangeNotifierProvider<DataFirebase>(
           create: (_) => DataFirebase(),
-          child: const InfoWidgetSoi(),
+          child: const InfoWidgetHiu(),
         ),
       ],
       child: const MaterialApp(
